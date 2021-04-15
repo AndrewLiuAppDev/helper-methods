@@ -1,0 +1,65 @@
+<h1>
+  List of all actors
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to 'Add a new actor', new_actor_path %>
+</div>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      First name
+    </th>
+
+    <th>
+      Last name
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @actors.each do |actor| %>
+  <tr>
+    <td>
+      <%= actor.id %>
+    </td>
+
+    <td>
+      <%= actor.first_name %>
+    </td>
+
+    <td>
+      <%= actor.last_name %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(actor.created_at) %> ago
+    </td>
+    <td>
+      <%= time_ago_in_words(actor.updated_at) %> ago
+    </td>
+
+    <td>
+      <%= link_to 'Show details', actor %>
+    </td>
+  </tr>
+  <% end %>
+</table>

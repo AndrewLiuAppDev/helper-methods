@@ -1,0 +1,51 @@
+<div>
+  <div>
+    <h1>
+      Actor #<%= @actor.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <%= link_to 'Go back', actors_path %>
+      </div>
+
+      <div>
+        <%= link_to 'Edit actor', edit_actor_path(@actor.id) %>
+      </div>
+
+      <div>
+        <%= link_to 'Delete actor', actor_path(@actor.id), method: "delete" %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <dd>
+        <%= @actor.first_name %>
+      </dd>
+
+      <dt>
+        Last name
+      </dt>
+      <dd>
+        <%= @actor.last_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@actor.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@actor.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
